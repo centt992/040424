@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Anniversary Time Capsule</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="no-scroll">
+
+    <div class="opening-screen" id="opening-screen">
+        <div class="opening-card">
+            <div class="opening-heart">💖</div>
+            <h1>Hello, My Love!</h1>
+            <p>Press the button to continue to your anniversary story.</p>
+            <button id="open-btn" class="btn-continue">Continue</button>
+        </div>
+    </div>
+
+    <div class="site-content hidden" id="site-content">
+      <header>
+          <div class="hero-section">
+              <h1 data-aos="fade-down">Happy Anniversary</h1>
+              <p data-aos="fade-up" data-aos-delay="300">Walking through our memories together.</p>
+          </div>
+      </header>
+
+      <main class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-img">
+                <img src="IMG-20231219-WA0005.jpg" alt="Pertama Bertemu">
+            </div>
+            <div class="timeline-content">
+                <h2>First Time We Met</h2>
+                <p>January 15, 2023 - The day everything began. Your smile is the first thing I remember.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Kencan Pertama">
+            </div>
+            <div class="timeline-content">
+                <h2>First Date</h2>
+                <p>February 14, 2023 - A simple dinner filled with unforgettable laughter.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Momen Spesial">
+            </div>
+            <div class="timeline-content">
+                <h2>First Adventure</h2>
+                <p>June 10, 2023 - Our first long trip together. Tiring, but so meaningful.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Cincin Pertunangan">
+            </div>
+            <div class="timeline-content">
+                <h2>Our Engagement Day</h2>
+                <p>December 12, 2023 - When I knelt down, my heart overflowed. You said yes, and our worlds united.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Pesta Kecil">
+            </div>
+            <div class="timeline-content">
+                <h2>Family Celebration</h2>
+                <p>January 5, 2024 - Celebrating love with close family. Warm, peaceful, and full of laughter.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Jalan-jalan Santai">
+            </div>
+            <div class="timeline-content">
+                <h2>Relaxing Walk</h2>
+                <p>February 22, 2024 - A weekend evening filled with coffee, long stories, and warm hugs by the beach.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Rumah Baru">
+            </div>
+            <div class="timeline-content">
+                <h2>Our First Home</h2>
+                <p>April 10, 2024 - Setting up our first home together, paint splashes and empty laughter.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Masak Bareng">
+            </div>
+            <div class="timeline-content">
+                <h2>Cooking Together</h2>
+                <p>May 18, 2024 - Hungry in our tiny kitchen. A little burnt food, but hearts grew closer.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Tahun Baru Bersama">
+            </div>
+            <div class="timeline-content">
+                <h2>New Year Together</h2>
+                <p>January 1, 2025 - First hug in the new year, new promises, and new hopes together.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-img">
+                <img src="https://via.placeholder.com/300" alt="Surprise Party">
+            </div>
+            <div class="timeline-content">
+                <h2>Surprise and Laughter</h2>
+                <p>February 12, 2025 - You gave a simple memorable surprise. Your face shone all day long.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Made with love ❤️ </p>
+    </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          duration: 1000,
+          once: true
+      });
+
+      const openBtn = document.getElementById('open-btn');
+      const openingScreen = document.getElementById('opening-screen');
+      const siteContent = document.getElementById('site-content');
+      openBtn?.addEventListener('click', () => {
+        openingScreen.classList.add('opening-hidden');
+        siteContent?.classList.remove('hidden');
+        siteContent?.classList.add('shown');
+        document.body.classList.remove('no-scroll');
+        AOS.refresh();
+        setTimeout(() => {
+          openingScreen.style.display = 'none';
+        }, 500);
+      });
+
+      window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+      });
+      window.addEventListener('load', () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
+</body>
+</html>
