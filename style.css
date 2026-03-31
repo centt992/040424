@@ -221,7 +221,6 @@ footer p {
     margin: 0;
 }
 
-/* Responsivitas untuk Mobile */
 @media (max-width: 768px) {
     .timeline-item, .timeline-item:nth-child(even) {
         flex-direction: column;
@@ -230,4 +229,66 @@ footer p {
     h1 { font-size: 2.4rem; }
     .timeline-img img { width: 100%; height: auto; }
     .timeline-item { padding: 16px; }
+    .photo-collage {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        margin-top: 40px;
+    }
+    .photo-collage .collage-item {
+        overflow: hidden;
+        border-radius: 20px;
+        border: 2px solid rgba(255, 175, 207, 0.6);
+        background: #fff;
+    }
+    .photo-collage .collage-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .photo-collage .collage-item:hover img {
+        transform: scale(1.05);
+    }
+}
+
+/* Heart-shaped photo collage */
+.photo-collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.photo-collage .collage-item {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 175, 207, 0.6);
+    background: #fff;
+    aspect-ratio: 1;
+}
+
+.photo-collage .collage-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-collage .collage-item:hover img {
+    transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+    .photo-collage {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 }
